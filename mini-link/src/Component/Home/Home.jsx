@@ -13,7 +13,7 @@ const Home = () => {
                     </h1>
                 </div>
                 <div className="mini__link__input w-2/4 mx-auto flex">
-                    <input className='border-[#472D2D] border-2 w-full bg-[#FEFBE7] p-2 text-2xl outline-0' type="text" name="" id="" />
+                    <input className='border-[#472D2D] border-2 w-full bg-[#FEFBE7] p-2 text-2xl outline-0' type="text" name="" id="" placeholder='Enter Your Favorite Link'/>
                     <button className='text-2xl bg-[#472D2D] text-[#FEFBE7] px-8 py-2'>Shorten</button>
                 </div>
             </div>
