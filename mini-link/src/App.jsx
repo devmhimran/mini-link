@@ -8,13 +8,20 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
+import Home from './Component/Home/Home';
+import { Route, Routes } from 'react-router-dom';
+import NavMenu from './Component/NavMenu/NavMenu';
+import Login from './Component/Login/Login';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App ">
-      <h1>Mini Link</h1>
+      <NavMenu></NavMenu>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   )
 }
