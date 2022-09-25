@@ -29,7 +29,11 @@ body{
     border-2 w-full bg-[#FEFBE7]
     p-2 text-2xl outline-0;
 }
-
+.content__container{
+    @apply  h-[100.8vh]
+    bg-cover bg-center bg-no-repeat 
+    flex items-center justify-center
+}
 
 @media only screen and (max-width: 600px) {
     .home__main,
