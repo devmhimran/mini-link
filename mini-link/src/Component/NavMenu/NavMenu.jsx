@@ -8,7 +8,7 @@ const NavMenu = () => {
         <div className='container mx-auto w-3/6 mb-[-100px]'>
             <div className="navbar__main flex justify-between items-center pt-3">
                 <Link to='/'><img src={miniLinkLogo} alt="" /></Link>
-                <Link to='/login' className='text-2xl font-medium'>Login</Link>
+                <Link to='/signin' className='text-2xl font-medium'>Sign in</Link>
             </div>
         </div>
     );

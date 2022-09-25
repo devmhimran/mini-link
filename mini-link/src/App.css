@@ -19,7 +19,8 @@ body{
 }
 
 .home__main,
-.login__main
+.login__main,
+.register__main
 {
     background-image: url('../src/assets/cover-mini-link2.png');
 }
@@ -37,7 +38,8 @@ body{
 
 @media only screen and (max-width: 600px) {
     .home__main,
-    .login__main
+    .login__main,
+    .register__main
     {
         background-image: url('../src/assets/cover-mini-link-phone.png');
     }
