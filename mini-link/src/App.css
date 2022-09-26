@@ -20,7 +20,8 @@ body{
 
 .home__main,
 .login__main,
-.register__main
+.register__main,
+.email__verification
 {
     background-image: url('../src/assets/cover-mini-link2.png');
 }
@@ -34,41 +35,44 @@ body{
     @apply  h-[100.8vh]
     bg-cover bg-center bg-no-repeat 
     flex items-center justify-center
+    lg:px-0 px-3
 }
 .preloader::after { 
-    position: absolute;
-    top: 0;
-    bottom: 4%;
-    right: 0;
-    left: 0;
-    
-    content: " ";
-    display: block;
-    
-    margin: auto;
-    height: 32px;
-    width: 32px;
-    
-    box-sizing: border-box;
-    border: solid;
-    border-width: 4px;
-    border-radius: 50%;
-    border-top-color: rgba(140, 140, 140, 0.55);
-    border-bottom-color: rgba(140, 140, 140, 0.2);
-    border-right-color: rgba(140, 140, 140, 0.2);
-    border-left-color: rgba(140, 140, 140, 0.2);
-    
-    animation: rotating 0.9s linear infinite;
-  }
+  position: absolute;
+  top: 0;
+  bottom: 4%;
+  right: 0;
+  left: 0;
   
-  @keyframes rotating{
-    from {
-      transform:rotate(0deg);
-    }
-    to {
-      transform:rotate(360deg);
-    }
+  content: " ";
+  display: block;
+  
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  
+  box-sizing: border-box;
+  border: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-top-color: rgba(71, 45, 45, 1);
+  border-bottom-color: rgba(219, 199, 199, 1);
+  border-right-color: rgba(219, 199, 199, 1);
+  border-left-color: rgba(219, 199, 199, 1);
+  
+  animation: rotating 0.9s linear infinite;
+}
+
+@keyframes rotating{
+  from {
+    transform:rotate(0deg);
   }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+
   
 @media only screen and (max-width: 600px) {
     .home__main,
