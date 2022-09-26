@@ -26,7 +26,7 @@ const Home = () => {
     }
     return (
         <div className='home__container'>
-            <NavMenu></NavMenu>
+            <NavMenu page='home'></NavMenu>
             <div className="home__main content__container">
                 <div className="container mx-auto max-w-screen-xl">
                     <div className="home__heading w-7/12 mx-auto mb-12">

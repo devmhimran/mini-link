@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { toast, Toaster } from 'react-hot-toast';
@@ -16,6 +17,9 @@ const RequireAuth = ({ children }) => {
     if (!user) {
         return <Navigate to='/signin' state={{ from: location }} replace></Navigate>
     }
+    const handleLogout = () =>{
+        signOut(auth);
+    }
     if (!user.emailVerified) {
         return <div className="email__container">
             <NavMenu></NavMenu>
@@ -30,6 +34,12 @@ const RequireAuth = ({ children }) => {
                             await sendEmailVerification();
                             toast.success('Sent Email');
                         }}>Resend</button>
+
+                    </div>
+                    <div className='sign__in__btn text-center mt-6'>
+                        {
+                            user ? <button onClick={handleLogout}>Sign out</button> : ''
+                        }
                     </div>
                 </div>
             </div>

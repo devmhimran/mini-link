@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import NavMenu from '../NavMenu/NavMenu';
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
@@ -11,28 +11,37 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const [updateProfile, updating, updateProfileError] = useUpdateProfile(auth);
-      const [errorMsg, setErrorMsg] = useState('');
-      console.log(user)
-    const handleRegister = async (e) =>{
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateProfileError] = useUpdateProfile(auth);
+    const [errorMsg, setErrorMsg] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    let loginError;
+    if (error) {
+        loginError = error.message;
+    }
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    const handleRegister = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-        
 
-        if(password === confirmPassword){
 
-           await createUserWithEmailAndPassword(email, password);
-           await updateProfile({ displayName: name });
-        }else{
+        if (password === confirmPassword) {
+
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name });
+        } else {
             const errorMessage = <><small className='text-red-500'>Wrong password try again</small></>
             setErrorMsg(errorMessage)
         }
 
-        
+
 
     }
     return (
