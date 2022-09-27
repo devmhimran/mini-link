@@ -16,9 +16,10 @@ const Register = () => {
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    let loginError;
+    // let registerError;
     if (error) {
-        loginError = error.message;
+      let  registerError = error.message;
+      console.log(registerError)
     }
     let from = location.state?.from?.pathname || "/";
     if (user) {
@@ -30,8 +31,6 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-
-
         if (password === confirmPassword) {
 
             await createUserWithEmailAndPassword(email, password);
@@ -40,10 +39,8 @@ const Register = () => {
             const errorMessage = <><small className='text-red-500'>Wrong password try again</small></>
             setErrorMsg(errorMessage)
         }
-
-
-
     }
+
     return (
         <div>
             <NavMenu></NavMenu>

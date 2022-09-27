@@ -13,6 +13,10 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const location = useLocation();
     const navigate = useNavigate();
+    let errorMsg;
+    if(error){
+        errorMsg = <><small className='text-red-500 text-base'>{error.message}</small></>
+    }
     let from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
@@ -40,6 +44,9 @@ const Login = () => {
                             <label htmlFor="password" className='capitalize text-lg'>Enter your Email</label>
                             <input className='basic__input' type="password" name="password" id="password" />
                             <small className='text-[#1363DF] font-medium'>Forget Password?</small>
+                        </div>
+                        <div className="error__message">
+                            {errorMsg}
                         </div>
                         <div className="login__input my-3">
                             <button className='text-lg w-full bg-[#472D2D] text-[#FEFBE7] py-3 font-semibold'>Sign in</button>
