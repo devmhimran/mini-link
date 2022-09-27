@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "link-shortner-68000"
+  },
+  "targets": {
+    "link-shortner-68000": {
+      "hosting": {
+        "tr": [
+          "mini-link-shortener"
+        ]
+      }
+    }
+  }
+}
