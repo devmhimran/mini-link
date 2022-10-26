@@ -19,11 +19,11 @@ const NavMenu = ({page}) => {
                      : <Link to='/dashboard' className='text-2xl font-medium text-[#472D2D]'>Dashboard</Link>
                 } */}
                 
-                {
+                {/* {
                     user ? page === 'home' ? <Link to='/dashboard' className='text-2xl font-medium text-[#472D2D]'>Dashboard</Link> :
                     <Link onClick={() => signOut(auth)} className='text-2xl font-medium text-[#472D2D]'>Sign out</Link> : 
                     <Link to='/signin' className='text-2xl font-medium text-[#472D2D]'>Sign in</Link>
-                }
+                } */}
             </div>
         </div>
     );

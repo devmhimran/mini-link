@@ -22,7 +22,8 @@ body{
 .login__main,
 .register__main,
 .email__verification,
-.dashboard__main
+.dashboard__main,
+.error__page
 {
     background-image: url('../src/assets/cover-mini-link2.png');
 }
@@ -79,7 +80,8 @@ body{
     .home__main,
     .login__main,
     .register__main,
-    .dashboard__main
+    .dashboard__main,
+    .error__page
     {
         background-image: url('../src/assets/cover-mini-link-phone.png');
     }

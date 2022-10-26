@@ -7,6 +7,7 @@ import Register from './Component/Register/Register';
 import Loading from './Component/Loading/Loading';
 import Dashboard from './Component/Dashboard/Dashboard';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
+import ErrorPage from './Component/ErrorPage/ErrorPage';
 
 function App() {
 
@@ -16,12 +17,13 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
+        {/* <Route path="/signin" element={<Login />} /> */}
+        {/* <Route path="/signup" element={<Register />} /> */}
         <Route path="/loading" element={<Loading />} />
         <Route path="/dashboard" element={<RequireAuth>
           <Dashboard />
         </RequireAuth>} />
+        <Route path="*" element={<ErrorPage/>} />
       </Routes>
 
     </div>
